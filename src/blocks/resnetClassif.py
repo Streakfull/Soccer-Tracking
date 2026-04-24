@@ -3,7 +3,6 @@ import torch.nn as nn
 from einops import rearrange
 import numpy as np
 from torchvision import models
-import pdb
 
 
 class PlayerClassifier(nn.Module):

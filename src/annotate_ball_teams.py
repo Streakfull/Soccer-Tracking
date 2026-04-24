@@ -14,7 +14,6 @@ import numpy as np
 import cv2
 import os
 from blocks.team_classifier import TeamClassifier
-import pdb
 from tqdm import tqdm
 import itertools
 import json
@@ -48,15 +47,9 @@ class AnnotateBallTeams:
 
     def plot_ball(self, detections, img):
         """
-        Plots the detected ball bounding boxes on the image.
+        Plots the detected ball bounding box (highest confidence) on the image.
         Each detection contains [class, x_min, y_min, x_max, y_max, confidence].
-        """
-        # for detection in detections:
-        #     _, x_min, y_min, x_max, y_max, conf = detection
-        #     # Draw bounding box as a blue rectangle
-        #     cv2.rectangle(img, (int(x_min), int(y_min)),
-        #                   (int(x_max), int(y_max)), (0, 0, 0), 2)
-        # return img
+        \"\"\"
         if not detections:
             return img  # Return the original image if there are no detections
 
@@ -70,7 +63,7 @@ class AnnotateBallTeams:
 
     def plot_player_bounding_boxes(self, img, player_detections, team_predictions):
         """
-        Plots bounding boxes around players and colors their IDs with a colored background 
+        Plots bounding boxes around players and colors their IDs with a colored background
         based on team predictions. The bounding box color matches the team color.
         """
         # Updated team colors with dark green for Team 1
@@ -267,7 +260,7 @@ class AnnotateBallTeams:
     def extract_player_crops(self, img, player_detections):
         """
         Extracts crops of the players from the image based on player detections.
-        The detections are expected to be in the form of [x_min, y_min, x_max, y_max, confidence, class_id].
+        The detections are expected to be in the form of[x_min, y_min, x_max, y_max, confidence, class_id].
         The crops will be in RGB format.
         """
         player_crops = []

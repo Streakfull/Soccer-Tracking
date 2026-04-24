@@ -69,14 +69,8 @@ class SiameseNetworkPnet(nn.Module):
     def forward(self, x):
         x1 = x["x1k"]
         x2 = x["x2k"]
-        # import pdb
-        # pdb.set_trace()
         x1 = self.backbone(x1)
         x2 = self.backbone(x2)
-        # import pdb
-        # pdb.set_trace()
-        # x1 = self.pnet(x1)
-        # x2 = self.pnet(x2)
         x1c = x1.unsqueeze(1)
         x2c = x2.unsqueeze(1)
         fc = torch.cat((x1c, x2c), dim=1)
@@ -86,8 +80,6 @@ class SiameseNetworkPnet(nn.Module):
         fc = rearrange(fc, 'bs ch (w h) -> bs ch w h', w=conv_dim, h=conv_dim)
         fc = self.comb(fc)
         fc = fc.flatten(start_dim=1)
-        # import pdb
-        # pdb.set_trace()
         fc = self.cls(fc)
         return x1, x2, fc
 

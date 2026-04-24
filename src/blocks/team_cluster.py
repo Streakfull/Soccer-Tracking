@@ -3,7 +3,6 @@ import torch.nn as nn
 from einops import rearrange
 import numpy as np
 from torchvision import models
-import pdb
 
 
 class TeamCluster(nn.Module):
@@ -12,4 +11,4 @@ class TeamCluster(nn.Module):
         super(TeamCluster, self).__init__()
 
     def forward(self, x):
-        print("HI")
+        pass

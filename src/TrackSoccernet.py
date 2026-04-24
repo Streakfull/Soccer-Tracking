@@ -22,7 +22,7 @@ class TrackSoccernet:
         self.direct_path = direct_path
         self.use_crops_cls = use_crops_cls
 
-        self.sn_bb = "../logs/eval/tracking-soccernet/0.3-app-pose-adaptive-update-1920-best"
+        self.sn_bb = os.path.join(self.write_path, "sn_bb")
         # Get sequence names from the 'det/SNMOT-test/' folder
         det_folder = os.path.join(self.dataset_root)
         if not os.path.isdir(det_folder):
@@ -33,10 +33,7 @@ class TrackSoccernet:
             if os.path.isdir(os.path.join(det_folder, seq))
         ])
         if (self.deubug):
-            # Choose SNMOT-200 here
             self.sequences = ['SNMOT-200']
-            # import pdb
-            # pdb.set_trace()
 
         if not self.sequences:
             raise ValueError(f"No sequences found in {det_folder}")

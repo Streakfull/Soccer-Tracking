@@ -8,7 +8,6 @@ import numpy as np
 import cv2
 import os
 from blocks.team_classifier import TeamClassifier
-import pdb
 from tqdm import tqdm
 import itertools
 import json
@@ -30,14 +29,6 @@ def get_crops(crops_path: str = "./raw_dataset/teams_clustering", target_size: i
 
     crops = []
     images = []
-    # for file_name in os.listdir(crops_path):
-    #     file_path = os.path.join(crops_path, file_name)
-    #     if file_name.lower().endswith(('.png', '.jpg', '.jpeg')):
-    #         image = cv2.imread(file_path)
-    #         # if image is not None:
-    #         #     processed_crop = preprocess_crop(image, target_size)
-    #         #     crops.append(processed_crop)
-    #         crops.append(image)
 
     for batch_index, batch_val in tqdm(enumerate(trainer.train_dataloader), total=len(
             trainer.train_dataloader)):
@@ -58,15 +49,10 @@ def get_crops(crops_path: str = "./raw_dataset/teams_clustering", target_size: i
 def get_crops_batch(batch_val):
     crops = batch_val["path"]
     images = []
-    # crops = [item for sublist in crops for item in sublist]
     for file_path in crops:
         image = cv2.imread(file_path)
-    #         # if image is not None:
-    #         #     processed_crop = preprocess_crop(image, target_size)
-    #         #     crops.append(processed_crop)
         images.append(image)
 
-    print("LEN IMAGES:", len(images))
     return images
 
 

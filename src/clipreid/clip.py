@@ -35,8 +35,6 @@ class Clip(BaseModel):
             final_div_factor=1000
         )
         self.scaler = torch.cuda.amp.GradScaler(init_scale=2.**10)
-        # import pdb
-        # pdb.set_trace()
 
     def prepare_query_gallery(self, batch):
         """Organizes batch into query and gallery sets ensuring each query has a positive."""

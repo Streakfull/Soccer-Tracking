@@ -168,6 +168,13 @@ logs
 .vscode
 sandbox.ipynb
 *.obj
+*.mp4
+*.avi
+*.mov
+*.swp
+*.swo
+*.ckpt
+*.pt
 testVisuals/*
 testVisuals
 tensorboard.ipynb

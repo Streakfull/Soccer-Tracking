@@ -1,13 +1,11 @@
 import random
 import math
-import pdb
 import yaml
-from tqdm import tqdm  # Import tqdm for progress tracking
+from tqdm import tqdm
 from collections import defaultdict
 from blocks.team_classifier import TeamClassifier
 import torch
 import glob
-from tabnanny import verbose
 from ultralytics import YOLO, ASSETS
 from tqdm import tqdm
 import cv2

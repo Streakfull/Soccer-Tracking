@@ -62,12 +62,6 @@ class TeamClassifier:
         self.device = device
         self.batch_size = batch_size
         self.features_model = self.load_features_model(device)
-        # self.features_model = SiglipVisionModel.from_pretrained(
-        #     SIGLIP_MODEL_PATH).to(device)
-
-        # self.features_model = OpenClipModel(,
-        #                                     self.configs["pretrained"],
-        #                                     True)
 
         self.processor = AutoProcessor.from_pretrained(SIGLIP_MODEL_PATH)
         self.reducer = umap.UMAP(n_components=umapcomp)
@@ -75,15 +69,11 @@ class TeamClassifier:
         self.save_path = save_path
 
     def load_features_model(self, device):
-        # model = SiglipVisionModel.from_pretrained(
-        #     SIGLIP_MODEL_PATH).to(device)
-        # return model
         model = OpenClipModel("ViT-B/16",
                               "openai",
                               True)
-        ckpt_path = "../logs/training/reidTracking/trainContinueBest/clipOGLoss2/2025_04_04_14_36_41/checkpoints/epoch-latest.ckpt"
+        ckpt_path = self.save_path.replace("model.pkl", "epoch-latest.ckpt")
         state_dict = torch.load(ckpt_path)
-        # # Assuming state_dict is your dictionary
         new_state_dict = {key.replace(
             "clip.model.", "model."): value for key, value in state_dict.items()}
         model.load_state_dict(new_state_dict)

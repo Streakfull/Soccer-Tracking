@@ -1,30 +1,8 @@
 training:
-  #name: 600kdataset
- # name: 150dataset
-  #name: soccer-net-training
-  #name: global-feat-1
-  #name: global-feat-no-padded
-  #name: global-feat-kp
-  #name: resnet-128-kp
-  #name: pose-transformer
-  #name: triplet-loss
-  #name: trainTest
-  #name: full-train-contrastive-loss
-  #name: debug # IMPORTANT
-  #name: snReidSoccernet
-  #name: infoNCELargeTransformer
-  #name: SNResnetKPInfoNce256x128Continue
- # name: trainContinueBest
-  #name: playerClassif
-  #name: oscKP
   name: oscVis
   description: reid with infoNCE only Fixed testing
-  #experiment_id: lc-resnet34-multiclass
-  #experiment_id: clipOGLoss2
   experiment_id: t1
-  #experiemnt_id: True
   extra_notes: none
-  #logs_dir: ../logs/training/reidTracking
   logs_dir: ../logs/training/reidFinal
   is_train: true
   device: cuda:0
@@ -48,45 +26,7 @@ training:
   enable_wandb: True
   apply_metrics_batch_count: 64 # number of batches to apply additional metrics on
   load_ckpt: False
-  #ckpt_path: logs/fullTrain/fullTrain4Continue/2024_08_08_14_33_28/checkpoints/epoch-latest.ckpt
-  #ckpt_path: logs/training/week7/overfit/overfit-10/2024_11_28_03_19_27/checkpoints/epoch-latest.ckpt
-  #ckpt_path: ../logs/training/week7/overfit/overfit-10/2024_11_28_03_19_27/checkpoints/epoch-latest.ckpt
-  #ckpt_path: ../logs/training/week7/train_full/train_full/2024_11_28_14_40_42/checkpoints/epoch-best.ckpt
-  #ckpt_path: ../logs/training/week7/600kdataset/train_full/2024_11_28_21_34_06/checkpoints/epoch-best.ckpt
-  #ckpt_path: ../logs/training/week7/150dataset/train_full/2024_11_29_06_50_43/checkpoints/epoch-best.ckpt
-  #ckpt_path: ../logs/training/week8/20kFarDataset/train_full/2024_12_01_04_12_28/checkpoints/epoch-best.ckpt
-  #ckpt_path: "../logs/training/siamese-resnet/visual_samples_100k/2024_11_14_03_02_33/checkpoints/epoch-best.ckpt"
-  #ckpt_path: "../logs/training/eval/fc/10k/uniform/2024_11_14_12_40_23/checkpoints/epoch-18.ckpt"
-  # ckpt_path: ../logs/training/siamese-lin-bn-conv/uniform_samples_200k/2024_11_14_04_21_24/checkpoints/epoch-best.ckpt
-  # ckpt_path: ../logs/training/week10/full-train-all-combined/plz-work-final/2024_12_15_23_28_38/checkpoints/epoch-best.ckpt
-  # ckpt_path: "../logs/training/week10/resnet/full-train/2024_12_18_23_51_10/checkpoints/epoch-best.ckpt"
-  # ckpt_path: "../logs/training/week11-paris/resnet/full-train/2024_12_22_00_28_00/checkpoints/epoch-best.ckpt"
-  # ckpt_path: "../logs/training/week11-paris/keypoints-training-2/full-train/2024_12_23_07_53_44/checkpoints/epoch-best.ckpt"
-  # ckpt_path: "../logs/training/week11-paris/keypoints-training-concat/full-train/2024_12_24_04_15_35/checkpoints/epoch-best.ckpt"
-  # ckpt_path: "../logs/training/week11-paris/keypoints-training-concat-2/full-train/2024_12_26_22_39_16/checkpoints/epoch-best.ckpt"
-  # ckpt_path: "../logs/training/week11-paris/keypoints-training-concat-2-no-kp/full-train/2024_12_30_08_23_54/checkpoints/epoch-latest.ckpt"
-  # ckpt_path: "../logs/training/week11-paris/V3Dataset-vit-kp/full-train/2025_01_04_00_50_31/checkpoints/epoch-best.ckpt"
-  # ckpt_path: "../logs/training/week11-paris/V3Dataset-vit-kp/full-train/2025_01_04_00_50_31/checkpoints/epoch-best.ckpt"
-  # ckpt_path: "../logs/training/week11-paris/V3Dataset-resnet-kp/full-train/2025_01_02_01_32_10/checkpoints/epoch-best.ckpt"
-  # #ckpt_path: "../logs/training/week12/team-classif/full-train/2025_01_14_11_26_46/checkpoints/epoch-best.ckpt"
-  # ckpt_path: "../logs/training/final-push-1/soccer-net-training/wandb-train/2025_03_06_10_21_01/checkpoints/epoch-best.ckpt"
-  # #ckpt_path: "../logs/training/final-push-1/global-padded-euclidean/full-train/2025_03_09_12_27_44/checkpoints/epoch-best.ckpt"
-  #ckpt_path: "../logs/training/final-push-1/global-feat-1/train-full/2025_03_07_03_36_40/checkpoints/epoch-best.ckpt"
-  #ckpt_path: "../logs/training/final-push-1/resnet-128-kp/full-train/2025_03_11_14_04_13/checkpoints/epoch-best.ckpt" #IMPORTANT
-  #ckpt_path: "../logs/training/final-push-1/resnet-128-kp/full-train/2025_03_11_14_04_13/checkpoints/epoch-10.ckpt"
-  #ckpt_path: "../logs/training/final-push-1/pose-transformer/full-train/2025_03_14_11_00_08/checkpoints/epoch-best.ckpt"
-  #ckpt_path: "../logs/training/final-push-1/triplet-loss/full-train/2025_03_18_06_28_04/checkpoints/epoch-best.ckpt"
-  #ckpt_path: "../logs/training/jersey-id/full-train/lc-resnet34-multiclass/2025_03_19_14_04_40/checkpoints/epoch-latest.ckpt"
-  #ckpt_path: "../logs/training/jersey-id/trainTest/lc-resnet34-multiclass/2025_03_20_06_02_25/checkpoints/epoch-latest.ckpt"
-  #ckpt_path: "../logs/training/reid/snReid/t2/2025_03_25_07_48_18/checkpoints/epoch-latest.ckpt" # Reid InfNCE
-  ckpt_path: "../logs/training/reid/snReidSoccernet/t2/2025_03_26_15_53_40/checkpoints/epoch-best.ckpt" #Reid SoccernetCont
- # ckpt_path:  "../logs/training/reid/snReidSoccernet/t3-infoNCE-continue-on-infoNce/2025_03_27_07_05_11/checkpoints/epoch-best.ckpt"
-  #ckpt_path: "../logs/training/reidTracking/infoNCEResnetSN/t1/2025_03_30_04_50_06/checkpoints/epoch-latest.ckpt"
-  #ckpt_path: "../logs/training/reidFinal/clipBlack/t1/2025_04_06_00_56_04/checkpoints/epoch-latest.ckpt" #Clip black
-  #ckpt_path
-  #ckpt_path: "../logs/training/reidTracking/trainContinueBest/clipOGLoss2/2025_04_04_14_36_41/checkpoints/epoch-latest.ckpt" # CLIP OG LOSS
-  #ckpt_path: "../logs/training/reidFinal/oscKP/t2Plz/2025_04_09_00_38_24/checkpoints/epoch-2.ckpt"
-  #ckpt_path: "../logs/training/reidFinal/oscKP/t4Plz/2025_04_09_04_16_56/checkpoints/epoch-latest.ckpt"
+  ckpt_path: \"../logs/training/reid/snReidSoccernet/t2/2025_03_26_15_53_40/checkpoints/epoch-best.ckpt\"
 dataset:
   dataset_field: player_classif
   path: None
@@ -160,7 +100,6 @@ model:
     weight_init: None
     criterion: CE
     metrics: None
-    #name: ViT-L-14
     name: ViT-B/16
     pretrained: openai
     scheduler_step_size: 5
@@ -169,50 +108,11 @@ model:
       kernel_size: 3
       padding: 1
 
-  # siamese:
-  #   model_filepath: ./pytorchmodels/Siamese.py
-  #   model_class: Siamese
-  #   metrics: None
-  #   #lr: 1.0e-3
-  #   lr: 1.0e-3
-  #   losses: acc,cont,cosp,cosn
-  #   weight_init: None
-  #   scheduler_step_size: 5
-  #   scheduler_gamma: 0.5
-  #   use_visual: True
-  #   use_combined: False
-  #   use_bb: False
-  #   use_pnet: False
-  #   use_kp: False
-  #   name: ViT-B/16
-  #   pretrained: openai
-
-  # siamese:
-  #   model_filepath: ./pytorchmodels/SiameseMergedCont.py
-  #   model_class: SiameseMergedCont
-  #   metrics: None
-  #   #lr: 1.0e-3
-  #   lr: 1.0e-3
-  #   losses: acc,cosp,cosn
-  #   weight_init: None
-  #   scheduler_step_size: 5
-  #   scheduler_gamma: 0.5
-  #   use_visual: True
-  #   use_combined: False
-  #   use_bb: False
-  #   use_pnet: False
-  #   use_kp: False
-  #   name: ViT-B/16
-  #   pretrained: openai
-
   siamese:
-    #model_filepath: ./pytorchmodels/siameseNCEResnet.py
-    #model_filepath: ./pytorchmodels/SiameseNCELargeClip.py
     model_filepath: ./pytorchmodels/siameseOSC.py
     model_class: SiameseOSC
     metrics: None
-    #lr: 1.0e-3
-    lr:  0.00004
+    lr: 0.00004
     losses: acc,cosp,cosn
     weight_init: None
     scheduler_step_size: 5
@@ -222,7 +122,6 @@ model:
     use_bb: False
     use_pnet: False
     use_kp: False
-    #name: ViT-L/14
     name: ViT-B/16
     pretrained: openai
 
