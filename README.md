@@ -8,7 +8,9 @@ Built as part of the **WS24 Interdisciplinary Project (IDP)** at TUM.
 
 ## Demo
 
-https://github.com/user-attachments/assets/4df611e7-4a74-42cc-b378-343d0f6b9155
+<video src="https://github.com/user-attachments/assets/b760d236-35ba-459b-b427-5a8a94571973" controls width="100%"></video>
+
+[Full demo videos (Google Drive)](https://drive.google.com/drive/folders/1eyM62ljdXLDRLPLwEwb2t6fNtY5PbMZ8?usp=drive_link) · [Project files (Google Drive)](https://drive.google.com/drive/folders/1Xk-h9kT8T02lWrnZvQBZrkcO-jCTNUFx?usp=drive_link)
 
 ## Pipeline
 
@@ -143,6 +145,6 @@ All experiments are logged to TensorBoard and Weights & Biases.
 
 ## Authors
 
-- **Mino Estrella** — mino.estrella@tum.de
+- **Youssef Youssef** — youssef.youssef@tum.de
 
 
